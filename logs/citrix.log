@@ -1,0 +1,8 @@
+2024-01-15 08:23:11 INFO User Ritik logged in on VDA1
+2024-01-15 08:45:33 ERROR VDA2 failed to register
+2024-01-15 09:12:44 INFO User Vishal session started on VDA2
+2024-01-15 09:30:21 ERROR VDA3 unreachable
+2024-01-15 10:05:17 INFO License check passed
+2024-01-15 10:44:52 ERROR VDA1 broker connection lost
+2024-01-15 11:20:09 INFO User Kartik logged in on VDA1
+2024-01-15 11:55:38 WARNING High session count on VDA1
