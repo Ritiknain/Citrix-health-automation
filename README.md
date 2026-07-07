@@ -1,4 +1,4 @@
-# Python Automation for Citrix Health Checks
+# Citrix Health Automation
 
 A Python automation tool that simplifies routine Citrix health monitoring by automating VDA connectivity checks and log file analysis.
 
@@ -15,7 +15,7 @@ A Python automation tool that simplifies routine Citrix health monitoring by aut
 ## Project Structure
 
 ```text
-Python_automation/
+Citrix-health-automation/
 │
 ├── health_monitor.py
 ├── README.md
@@ -77,13 +77,13 @@ Worst file: citrix.log with 3 errors
 ### Clone the repository
 
 ```bash
-git clone https://github.com/Ritiknain/python-citrix-health-check.git
+git clone https://github.com/Ritiknain/Citrix-health-automation.git
 ```
 
 ### Navigate to the project
 
 ```bash
-cd python-citrix-health-check
+cd Citrix-health-automation
 ```
 
 ### Run the script
@@ -111,9 +111,15 @@ python health_monitor.py
 
 ---
 
+## Contributing
+
+Contributions, suggestions, and improvements are welcome. Feel free to fork the repository and submit a pull request.
+
+---
+
 ## Author
 
 **Ritik Nain**
 
 - GitHub: https://github.com/Ritiknain
-- LinkedIn: https://linkedin.com/in/ritik-nain
+- LinkedIn: https://www.linkedin.com/in/ritik-nain/
