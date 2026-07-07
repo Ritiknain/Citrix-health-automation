@@ -1,95 +1,91 @@
-# Python Automation — Learning Journal
+# Python Automation for Citrix Health Checks
 
-A hands-on Python automation project built while transitioning from Citrix L2 Admin to IT Automation / AI Engineer.
+A Python automation tool that simplifies routine Citrix health monitoring by automating VDA connectivity checks and log file analysis.
 
-Each script is a real tool, not a tutorial exercise.
+## Features
 
----
+- Ping multiple VDAs to verify connectivity
+- Scan log files for `ERROR` entries
+- Count errors in each log file
+- Identify the log file with the highest number of errors
+- Generate a concise health report
 
-## Projects
+## Project Structure
 
-### Citrix Health Check (`build_day2.py`)
-Automated health monitor for Citrix environments.
-
-**What it does:**
-- Pings a list of VDA servers and reports Online / Unreachable status
-- Scans a folder of log files and counts ERROR lines in each
-- Identifies the worst offending log file
-- Prints a unified health report
-
-**What it replaces:**
-- Manually opening CMD and pinging each VDA one by one
-- Manually opening each log file and searching for errors
-
-**Sample output:**
 ```
-=== Citrix Health Check ===
+Python_automation/
+│
+├── health_monitor.py
+└── logs/
+    ├── broker.log
+    ├── citrix.log
+    └── vda.log
+```
+
+## Sample Output
+
+```text
+========================================
+      CITRIX HEALTH CHECK
+========================================
 
 Ping Status of VDAs:
-VDA01           — Unreachable
-VDA02           — Unreachable
-google.com      — Online
-VDA03           — Unreachable
 
-=== Log Error Report ===
-broker.log      — 2 ERRORS
-citrix.log      — 3 ERRORS
-vda.log         — 1 ERROR
+google.com      - Online
+VDA01           - Unreachable
+VDA02           - Unreachable
+VDA03           - Unreachable
+
+Log Error Report
+
+broker.log      - 2 ERRORS
+citrix.log      - 3 ERRORS
+vda.log         - 1 ERROR
 
 Worst file: citrix.log with 3 errors
 ```
 
----
+## Technologies Used
 
-## Tech Stack
-- Python 3.12
-- `os` — folder scanning and file path handling
-- `subprocess` — running system ping commands
-- `requests` — calling REST APIs
+- Python 3
+- os
+- subprocess
 
----
+## How It Works
 
-## How to Run
+1. Reads the list of VDAs defined in the script.
+2. Pings each VDA to verify connectivity.
+3. Scans all `.log` files in the `logs` folder.
+4. Counts the number of `ERROR` entries in each log file.
+5. Displays a summarized health report.
 
-**1. Clone the repo**
+## Getting Started
+
+### Clone the repository
+
 ```bash
-git clone https://github.com/Ritiknain/python-automation
-cd python-automation
+git clone https://github.com/Ritiknain/Python-Automation-for-Citrix-Health-Checks.git
 ```
 
-**2. Install dependencies**
+### Navigate to the project
+
 ```bash
-pip install requests
+cd Python-Automation-for-Citrix-Health-Checks
 ```
 
-**3. Add your log files**
+### Run the script
 
-Create a `logs/` folder and add `.log` files with INFO/ERROR lines.
-
-**4. Update the VDA list**
-
-Open `build_day2.py` and edit this line with your actual VDA hostnames or IPs:
-```python
-vdas = ["VDA01", "VDA02", "VDA03"]
-```
-
-**5. Run**
 ```bash
-python build_day2.py
+python health_monitor.py
 ```
 
----
+## Note
 
-## Roadmap
-- [ ] SQLite — store every health check run, track trends over time
-- [ ] CSV export — generate reports for stakeholders
-- [ ] Slack alerts — send notifications when VDAs go down
-- [ ] Windows Task Scheduler — run automatically every 15 minutes
-- [ ] Claude AI — diagnose errors and suggest fixes automatically
-
----
+This project uses sample VDA names and sample log files for demonstration purposes. It can be extended to work with real Citrix environments using PowerShell or the Citrix SDK.
 
 ## Author
-**Ritik Nain** — Citrix L2 Admin transitioning to IT Automation / AI Engineer
 
-[GitHub](https://github.com/Ritiknain) · [LinkedIn](https://linkedin.com/in/ritiknain)
+**Ritik Nain**
+
+- GitHub: https://github.com/Ritiknain
+- LinkedIn: https://linkedin.com/in/ritik-nain
